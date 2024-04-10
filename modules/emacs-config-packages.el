@@ -44,6 +44,7 @@
 (add-to-list 'package-selected-packages 'aggressive-indent)
 (add-to-list 'package-selected-packages 'package-lint)
 (add-to-list 'package-selected-packages 'package-lint-flymake)
+(add-to-list 'package-selected-packages 'zig-mode)
 
 ;; UI
 (add-to-list 'package-selected-packages 'all-the-icons)

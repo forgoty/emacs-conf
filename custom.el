@@ -11,7 +11,7 @@
   (save-some-buffers t))
 
 (setq project-vc-extra-root-markers
-      '("package.json" "requirements.txt" ".git"))
+      '("package.json" "requirements.txt" ".git" "build.zig"))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -71,5 +71,6 @@
 (require 'ide-mode-golang)
 (require 'ide-mode-js-ts)
 (require 'ide-mode-c)
+(require 'ide-mode-zig)
 
 (provide 'emacs-config-ide)

@@ -108,4 +108,7 @@
 ;; of the compiled version.
 (customize-set-variable 'load-prefer-newer t)
 
+;; Perform native compilation when possible
+(setq package-native-compile t)
+
 (provide 'early-init)
