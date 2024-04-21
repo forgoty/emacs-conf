@@ -110,5 +110,6 @@
 
 ;; Perform native compilation when possible
 (setq package-native-compile t)
+(setq native-comp-async-report-warnings-errors nil) ;; disable warnings of native compilation
 
 (provide 'early-init)
