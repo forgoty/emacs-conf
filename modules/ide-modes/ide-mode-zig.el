@@ -1,4 +1,4 @@
-;; Associated zig files with zig-mode
+;; Associated zig files with zig-ts-mode
 (require 'treesit)
 
 (defgroup zig-ts-mode nil
@@ -65,7 +65,7 @@ This is written mainly to be used as `beginning-of-defun-function' for Zig."
                  (throw 'done nil)))))
     t))
 
-(defun zig-mode-indent-line ()
+(defun zig-ts-mode-indent-line ()
   (interactive)
   ;; First, calculate the column that this line should be indented to.
   (let ((indent-col
@@ -389,7 +389,7 @@ This is written mainly to be used as `beginning-of-defun-function' for Zig."
                            electric-indent-chars)))
   (setq-local beginning-of-defun-function 'zig-beginning-of-defun)
   (setq-local end-of-defun-function 'zig-end-of-defun)
-  (setq-local indent-line-function 'zig-mode-indent-line)
+  (setq-local indent-line-function 'zig-ts-mode-indent-line)
   (setq-local indent-tabs-mode nil)  ; Zig forbids tab characters.
   (setq-local syntax-propertize-function 'zig-syntax-propertize)
 

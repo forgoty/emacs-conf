@@ -40,6 +40,15 @@
      (zig "https://github.com/maxxnino/tree-sitter-zig")
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
+(defun custom/treesit-install-all-languages ()
+    "Install all languages specified by `treesit-language-source-alist'."
+    (interactive)
+    (let ((languages (mapcar 'car treesit-language-source-alist)))
+      (dolist (lang languages)
+	      (treesit-install-language-grammar lang)
+	      (message "`%s' parser was installed." lang)
+	      (sit-for 0.75))))
+
 ;; Turn on max hightlights
 (setq treesit-font-lock-level 4)
 
