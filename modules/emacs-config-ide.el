@@ -37,6 +37,7 @@
      (plantuml "https://github.com/lyndsysimon/tree-sitter-plantuml")
      (gomod "https://github.com/camdencheek/tree-sitter-go-mod")
      (proto "https://github.com/mitchellh/tree-sitter-proto")
+     (zig "https://github.com/maxxnino/tree-sitter-zig")
      (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
 
 ;; Turn on max hightlights

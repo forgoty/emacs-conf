@@ -112,10 +112,13 @@
   "/bin/rg --null --line-buffered --color=never --max-columns=1000 --path-separator /\
    --smart-case --no-heading --with-filename --line-number --hidden --glob \"!{.git,node_modules,vendor,.venv,site-lisp}/*\"")
 
+;; Skip directories in a project from search
 (add-to-list 'vc-directory-exclusion-list "vendor")
 (add-to-list 'vc-directory-exclusion-list ".venv")
 (add-to-list 'vc-directory-exclusion-list "node_modules")
 (add-to-list 'vc-directory-exclusion-list "site-lisp")
+(add-to-list 'vc-directory-exclusion-list "zig-cache")
+(add-to-list 'vc-directory-exclusion-list "zig-out")
 
 ;; Custom advice
 (advice-add #'project-find-regexp :override 'consult-ripgrep)
