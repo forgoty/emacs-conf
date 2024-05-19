@@ -13,11 +13,9 @@ tab-indent."
 (define-key copilot-mode-map (kbd "<backtab>") 'custom/copilot-tab)
 (define-key copilot-mode-map (kbd "M-k") #'copilot-next-completion)
 (define-key copilot-mode-map (kbd "M-j") #'copilot-previous-completion)
+
 (setq copilot-indent-offset-warning-disable t)
-
-(with-eval-after-load
-    (global-copilot-mode))
-
+(add-hook 'prog-mode-hook 'copilot-mode)
 
 ;;;; Common flycheck
 (defun custom/toggle-flycheck-error-list ()

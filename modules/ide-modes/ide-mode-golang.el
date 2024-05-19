@@ -77,6 +77,11 @@
   (setq-local evil-shift-width go-tab-width)
   (flycheck-golangci-lint-setup)
   (setq flycheck-local-checkers '((eglot-check . ((next-checkers . ((warning . golangci-lint)))))))
+  ;; Turn off copilot mode for protobuf files
+  (add-hook 'find-file-hook (lambda ()
+                              (when (and (buffer-file-name)
+                                         (string-match-p "\\.pb\\.go\\'" (buffer-file-name)))
+                                (copilot-mode -1))))
   (add-hook 'before-save-hook (lambda ()
                                 (call-interactively #'eglot-format-buffer)
                                 (call-interactively #'eglot-code-action-organize-imports))))
