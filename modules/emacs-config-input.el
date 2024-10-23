@@ -121,6 +121,7 @@
   "fs" '(save-buffer :which-key "save file")
   "fd" '(delete-file :which-key "delete file")
   "fr" '(rename-file :which-key "rename file")
+  "fc" '(copy-file :which-key "copy file")
   "fS" '(save-all :which-key "save all"))
 (my-leader-def
   "p"  '(:keymap project-prefix-map :package project))

@@ -10,6 +10,7 @@
 ;; Bind extra `describe-*' commands
 (keymap-global-set "C-h K" #'describe-keymap)
 
+;; Make gruvbox theme default
 (load-theme 'doom-gruvbox t)
 
 ;; Modeline
@@ -31,6 +32,10 @@
 
 ;; Enable window numbers in modeline
 (winum-mode)
+
+;; Golden Ratio
+(golden-ratio-mode t)
+(add-hook 'window-selection-change-functions 'golden-ratio)
 
 ;; Workspaces
 (with-eval-after-load 'tabspaces
@@ -69,11 +74,11 @@
          (consult-customize consult--source-buffer :hidden t :default nil)
          (add-to-list 'consult-buffer-sources 'consult--source-workspace))
         (t
-         ;; reset consult-buffer to show all buffers 
+         ;; reset consult-buffer to show all buffers
          (consult-customize consult--source-buffer :hidden nil :default t)
          (setq consult-buffer-sources (remove #'consult--source-workspace consult-buffer-sources)))))
 
-(add-hook 'tabspaces-mode-hook #'custom/consult-tabspaces)           
+(add-hook 'tabspaces-mode-hook #'custom/consult-tabspaces)
 
 ;; Make sure project is initialized
 (project--ensure-read-project-list)
