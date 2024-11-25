@@ -36,6 +36,7 @@
 ;; Golden Ratio
 (golden-ratio-mode t)
 (add-hook 'window-selection-change-functions 'golden-ratio)
+(setq golden-ratio-exclude-modes '(ediff-mode))
 
 ;; Workspaces
 (with-eval-after-load 'tabspaces
