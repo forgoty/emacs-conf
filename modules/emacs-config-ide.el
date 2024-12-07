@@ -4,8 +4,7 @@
 (setq eglot-workspace-configuration
       '((:gopls .
                 ((buildFlags . ["-tags=unit,integration,e2e"])
-                 (gofumpt . t)
-                 ))))
+                 (gofumpt . t)))))
 
 ;; Glue between flycheck and eglot
 (require 'flycheck-eglot)
