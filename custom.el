@@ -57,10 +57,10 @@
  '(load-prefer-newer t t)
  '(marginalia-annotators
    '(marginalia-annotators-heavy marginalia-annotators-light nil) t)
- '(org-hide-emphasis-markers t t)
- '(org-link-descriptive t t)
- '(org-mouse-1-follows-link t t)
- '(org-return-follows-link t t)
+ '(org-hide-emphasis-markers t)
+ '(org-link-descriptive t)
+ '(org-mouse-1-follows-link t)
+ '(org-return-follows-link t)
  '(package-archive-priorities
    '(("gnu" . 99)
      ("nongnu" . 80)
