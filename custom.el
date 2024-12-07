@@ -31,10 +31,10 @@
  '(completion-styles '(orderless basic))
  '(completions-detailed t)
  '(corfu-auto t)
- '(corfu-auto-delay 0.0)
- '(corfu-auto-prefix 2)
+ '(corfu-auto-delay 0.5)
+ '(corfu-auto-prefix 3)
  '(corfu-cycle t)
- '(corfu-echo-documentation 0.25 t)
+ '(corfu-echo-documentation 0.75 t)
  '(custom-safe-themes
    '("e3daa8f18440301f3e54f2093fe15f4fe951986a8628e98dcd781efbec7a46f2" default))
  '(dired-auto-revert-buffer t)
