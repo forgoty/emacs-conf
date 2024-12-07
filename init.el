@@ -26,11 +26,11 @@ we can't reload the file."
     (load custom-file :noerror)))
 
 ;; Save all customizations to `custom-file', unless the user opted out.
-(add-hook 'after-init-hook #'custom/save-customized)
+;; (add-hook 'after-init-hook #'custom/save-customized)
 (add-hook 'after-init-hook #'package--save-selected-packages)
 
 ;;;; Packages phase
-;; Collect list of packages to install.  Do not just blindly copy this
+;; Collect list of packages to install. Do not just blindly copy this
 (require 'emacs-config-packages)
 
 ;; Install the packages listed in the `package-selected-packages' list.
