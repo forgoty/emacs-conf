@@ -405,12 +405,20 @@ This is written mainly to be used as `beginning-of-defun-function' for Zig."
 
 (add-to-list 'auto-mode-alist '("\\.\\(zig\\|zon\\)\\'" . zig-ts-mode))
 
+
+(defun zig//hooks ()
+  "Call this when zig-ts-mode is enabled."
+  (add-hook 'before-save-hook
+            (lambda ()
+              (when (eq major-mode 'zig-mode)
+                (call-interactively #'eglot-format-buffer)
+                (call-interactively #'eglot-code-action-organize-imports)))))
+
+
 (add-hook 'zig-ts-mode-hook #'eglot-ensure)
 (add-hook 'zig-ts-mode-hook 'flycheck-mode)
 (add-hook 'zig-ts-mode-hook #'hs-minor-mode)
-(add-hook 'before-save-hook (lambda ()
-                              (call-interactively #'eglot-format-buffer)
-                              (call-interactively #'eglot-code-action-organize-imports)))
+(add-hook 'zig-ts-mode-hook 'zig//hooks)
 
 (with-eval-after-load 'eglot
     (add-to-list 'eglot-server-programs '((zig-ts-mode) "zls")))
