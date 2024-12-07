@@ -60,9 +60,8 @@
 (add-to-list 'package-selected-packages 'markdown-mode)
 (add-to-list 'package-selected-packages 'pandoc-mode)
 (when (executable-find "latex")
-  (add-to-list 'package-selected-packages 'auctex))
-(when (and (executable-find "latex")
-           (executable-find "latexmk"))
-  (add-to-list 'package-selected-packages 'auctex-latexmk))
+  (add-to-list 'package-selected-packages 'auctex)
+  (when (executable-find "latexmk")
+    (add-to-list 'package-selected-packages 'auctex-latexmk)))
 
 (provide 'emacs-config-packages)
