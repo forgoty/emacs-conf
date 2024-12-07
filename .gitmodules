@@ -1,3 +1,7 @@
 [submodule "site-lisp/copilot"]
 	path = site-lisp/copilot
 	url = git@github.com:zerolfx/copilot.el.git
+
+[submodule "site-lisp/flycheck-golangci-lint"]
+	path = site-lisp/flycheck-golangci-lint
+	url = git@github.com:forgoty/flycheck-golangci-lint.git
