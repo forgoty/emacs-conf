@@ -5,6 +5,7 @@
 (require 'emacs-config-evil)
 (require 'emacs-config-ui)
 (require 'emacs-config-ide)
+(require 'emacs-config-org)
 (require 'emacs-config-writing)
 (require 'emacs-config-input)
 
