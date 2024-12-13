@@ -43,8 +43,7 @@
   (customize-set-variable 'tabspaces-use-filtered-buffers-as-default t)
   (customize-set-variable 'tabspaces-remove-to-default t)
   (customize-set-variable 'tabspaces-include-buffers '("*scratch*")))
-
-;; Activate it
+;;; Activate workspaces
 (customize-set-variable 'tabspaces-mode t)
 
 ;; Inside workspace make consult see buffers only from the workspace
