@@ -64,4 +64,7 @@
   (when (executable-find "latexmk")
     (add-to-list 'package-selected-packages 'auctex-latexmk)))
 
+;; Org-Mode
+(add-to-list 'package-selected-packages 'org-super-agenda)
+
 (provide 'emacs-config-packages)
