@@ -40,30 +40,44 @@
                       ("work" . ?w)
                       (:endgroup)))
 
-;; Remove filename from the agenda view
-(setq org-agenda-prefix-format "%t %s")
-
 ;; Custom agenda views
 (org-super-agenda-mode)
 (setq org-agenda-custom-commands
       '(("c" "Tasks"
          ((todo "BACKLOG"
-                ((org-agenda-overriding-header "Backlog")))
+                ((org-agenda-prefix-format "%?-12(car (org-get-outline-path)) %t %s")
+                 (org-agenda-breadcrumbs-separator "")
+                 (org-agenda-overriding-header "Backlog")))
           (todo "WEEKLY"
-                ((org-agenda-overriding-header "Weekly")))
+                ((org-agenda-prefix-format "%?-12(car (org-get-outline-path)) %t %s")
+                 (org-agenda-breadcrumbs-separator "")
+                 (org-agenda-overriding-header "Weekly")))
           (todo "WAITING"
-                ((org-agenda-overriding-header "Waiting (on hold)")))
+                ((org-agenda-prefix-format "%?-12(car (org-get-outline-path)) %t %s")
+                 (org-agenda-breadcrumbs-separator "")
+                 (org-agenda-overriding-header "Waiting (on hold)")))
           (todo "TODO"
-                ((org-agenda-overriding-header "TODO")))
+                ((org-agenda-prefix-format "%?-12(car (org-get-outline-path)) %t %s")
+                 (org-agenda-breadcrumbs-separator "")
+                 (org-agenda-overriding-header "TODO")))
           (todo "NEXT"
-                ((org-agenda-overriding-header "Next TODO")))
+                ((org-agenda-prefix-format "%?-12(car (org-get-outline-path)) %t %s")
+                 (org-agenda-breadcrumbs-separator "")
+                 (org-agenda-overriding-header "Next TODO")))
           (todo "IN-PROGRESS"
-                ((org-agenda-overriding-header "In-Progress")))
+                ((org-agenda-prefix-format "%?-12(car (org-get-outline-path)) %t %s")
+                 (org-agenda-breadcrumbs-separator "")
+                 (org-agenda-overriding-header "In-Progress")))
           (todo "DONE"
-                ((org-agenda-overriding-header "Completed")))))
+                ((org-agenda-max-entries 10)
+                 (org-agenda-sorting-strategy '(timestamp-down))
+                 (org-agenda-prefix-format "%?-12(car (org-get-outline-path)) %t %s")
+                 (org-agenda-breadcrumbs-separator "")
+                 (org-agenda-overriding-header "Completed")))))
         ("p" "Projects"
          ((todo ""
-                   ((org-super-agenda-groups
+                ((org-agenda-prefix-format "%t %s")
+                 (org-super-agenda-groups
                      '((:auto-parent t)))))))))
 
 ;; Capture templates
