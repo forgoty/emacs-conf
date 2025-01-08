@@ -4,6 +4,9 @@
 (setq org-agenda-files (list org-directory))
 (setq org-default-notes-file (concat org-directory "notes.org"))
 
+;; Save org buffers on org-agenda-redo (redraw agenda)
+(advice-add 'org-agenda-redo :after 'org-save-all-org-buffers)
+
 (defun org-agenda-todo-next ()
     "Org agenda todo next cycle"
     (interactive)
