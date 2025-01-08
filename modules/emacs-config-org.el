@@ -7,6 +7,9 @@
 ;; Save org buffers on org-agenda-redo (redraw agenda)
 (advice-add 'org-agenda-redo :after 'org-save-all-org-buffers)
 
+;; Done task have timestamps attached
+(setq org-log-done 'time)
+
 (defun org-agenda-todo-next ()
     "Org agenda todo next cycle"
     (interactive)
@@ -71,6 +74,11 @@
                 ((org-agenda-prefix-format "%?-12(car (org-get-outline-path)) %t %s")
                  (org-agenda-breadcrumbs-separator "")
                  (org-agenda-overriding-header "In-Progress")))
+          (tags "CLOSED>=\"<today>\""
+                ((org-agenda-prefix-format "%?-12(car (org-get-outline-path)) %t %s")
+                 (org-agenda-skip-function '(org-agenda-skip-entry-if 'nottodo 'done))
+                 (org-agenda-breadcrumbs-separator "")
+                 (org-agenda-overriding-header "Completed Today")))
           (todo "DONE"
                 ((org-agenda-max-entries 10)
                  (org-agenda-sorting-strategy '(timestamp-down))
