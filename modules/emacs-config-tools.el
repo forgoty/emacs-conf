@@ -20,9 +20,6 @@ tab-indent."
           (lambda ()
             (add-hook 'prog-mode-hook 'copilot-mode)))
 
-;; Magit
-(setq ediff-show-ancestor nil)
-
 ;;;; Common flycheck
 (defun custom/toggle-flycheck-error-list ()
   "Toggle flycheck's error list window.
