@@ -46,6 +46,16 @@
                       ("work" . ?w)
                       (:endgroup)))
 
+;; Clock in/out when task state changes to/from IN-PROGRESS
+(defun org-clock-toggle-by-state ()
+  (if (and (string= org-state "IN-PROGRESS")
+           (not (org-clock-is-active)))
+      (org-clock-in)
+    (when (org-clock-is-active)
+      (org-clock-out))))
+
+(add-hook 'org-after-todo-state-change-hook #'org-clock-toggle-by-state)
+
 ;; Custom agenda views
 (org-super-agenda-mode)
 (setq org-agenda-custom-commands
